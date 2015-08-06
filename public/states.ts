@@ -16,6 +16,16 @@ class States implements ho.flux.IStates {
 			]
 		},
 		{
+			name: 'private',
+			url: 'private',
+			before: data => {
+				return ho.flux.STORES.get(LoginStore).check(data);
+			},
+			view: [
+				{ name: 'view1', html: '<p>PRIVATE! Go away!</p>' }
+			]
+		},
+		{
 			name: 'catchall',
 			url: '.*',
 			redirect: 'home'
