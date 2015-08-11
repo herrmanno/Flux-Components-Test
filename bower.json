@@ -13,6 +13,6 @@
     "tests"
   ],
   "dependencies": {
-    "ho-ui": "*"
+    "ho-ui": "latest"
   }
 }

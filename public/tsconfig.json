@@ -15,7 +15,7 @@
         "./components/LoginForm/LoginForm.ts",
         "./components/Navigation/Navigation.ts",
         "./states.ts",
-        "./stores/LoginStore.ts",
+        "./stores/LoginStore/LoginStore.ts",
         "./typing.d.ts"
     ]
 }
