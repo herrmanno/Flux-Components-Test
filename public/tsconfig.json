@@ -3,19 +3,26 @@
     "compilerOptions": {
         "target": "es5",
         "sourceMap": true,
-        "inlineSourceMap": true
+        "inlineSourceMap": true,
+        "inlineSources": true,
+        "emitDecoratorMetadata": true,
+        "experimentalDecorators": true
     },
     "filesGlob": [
         "./**/*.ts",
         "./**/*.tsx",
-        "!./node_modules/**/*"
+        "!./node_modules/**/*",
+        "!./**/*.d.ts"
     ],
     "files": [
+        "./actions/LoginActions/LoginActions.ts",
+        "./attributes/disable/disable.ts",
         "./components/App/App.ts",
         "./components/LoginForm/LoginForm.ts",
         "./components/Navigation/Navigation.ts",
+        "./const.ts",
         "./states.ts",
         "./stores/LoginStore/LoginStore.ts",
-        "./typing.d.ts"
+        "./stores/MyRouter/MyRouter.ts"
     ]
 }

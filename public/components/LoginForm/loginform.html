@@ -1,4 +1,4 @@
 <input id="username" bind="user.name"/>
 <input id="password" bind="user.password"/>
-<button type="button" onclick="{#login()}">Login</button>
+<button type="button" onclick="{#login()}" disable="!#user.name# || !#user.password#">Login</button>
 <p BindBi="error"></p>

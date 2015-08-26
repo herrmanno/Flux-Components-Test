@@ -10,13 +10,15 @@
 		<script src="../bower_components/ho-flux/dist/flux.js" charset="utf-8"></script>
 		<script src="components/App/app.js" charset="utf-8"></script>
 		-->
+		<script src="const.js" charset="utf-8"></script>
 		<script src="../bower_components/ho-ui/dist/ho-all.js" charset="utf-8"></script>
 	</head>
 	<body>
 		<App></App>
 		<script type="text/javascript">
 			ho.ui.run({
-				map: "../bower_components/ho-ui/dist/"
+				map: "../bower_components/ho-ui/dist/",
+				router: "MyRouter"
 			}).then(function() {
 				window.ROUTER = ho.flux.STORES.get(ho.flux.Router);
 			});

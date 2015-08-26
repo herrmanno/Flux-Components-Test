@@ -6,7 +6,4 @@ class App extends ho.components.Component {
 
 	requires = ["Navigation", "View"];
 
-	init() {
-		return ho.flux.STORES.loadStore('LoginStore');
-	}
 }

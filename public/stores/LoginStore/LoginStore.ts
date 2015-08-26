@@ -5,10 +5,8 @@ interface ILoginStoreData {
 
 class LoginStore extends ho.flux.Store<ILoginStoreData> {
 
-	private loggedIn = false;
-
-	isLoggedIn(): boolean {
-		return this.loggedIn;
+	get loggedIn() {
+		return !!this.data.name && !!this.data.password;
 	}
 
 	check(data: ho.flux.IRouteData): ho.promise.Promise<any, any> {
@@ -23,18 +21,15 @@ class LoginStore extends ho.flux.Store<ILoginStoreData> {
 		});
 	}
 
-	login(user: ILoginStoreData): ho.promise.Promise<any, any> {
-		return new ho.promise.Promise((resolve, reject) => {
-			let users = localStorage['users'] && JSON.parse(localStorage['users']) || [];
-			let found = users.filter(u => {return u.name === user.name})[0];
-			if(found) {
-				this.loggedIn = true;
-				resolve(true);
-			}
-			else {
-				this.loggedIn = false;
-				reject('Wrong credentials');
-			}
-		});
+	@ho.flux.Store.on(CONST.LOGIN_OK)
+	onLogin_OK(user: ILoginStoreData) {
+		this.data = user;
+		this.changed();
+	}
+
+	@ho.flux.Store.on(CONST.LOGIN_ERR)
+	onLogin_ERR(user: ILoginStoreData) {
+		this.data = <ILoginStoreData>{};
+		this.changed();
 	}
 }

@@ -1,4 +1,4 @@
-class Navigation extends Stored {
+class Navigation extends FluxComponent {
 
 	html = "navigation.html";
 
@@ -7,13 +7,15 @@ class Navigation extends Stored {
 	private loggedIn = false;
 
 	init() {
+		let self = this;
 		return super.init()
 		.then(() => {
-			ho.flux.STORES.get(LoginStore).register(this.loginStoreChanged, this);
+			self.stores['LoginStore'].register(self.loginStoreChanged, self);
 		})
 	}
 
 	protected loginStoreChanged(data: ILoginStoreData): void {
 		this.loggedIn = !!data.name;
+		this.render();
 	}
 }
