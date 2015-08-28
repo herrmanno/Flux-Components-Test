@@ -16,7 +16,6 @@
     ],
     "files": [
         "./actions/LoginActions/LoginActions.ts",
-        "./attributes/disable/disable.ts",
         "./components/App/App.ts",
         "./components/LoginForm/LoginForm.ts",
         "./components/Navigation/Navigation.ts",
