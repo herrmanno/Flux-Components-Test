@@ -20,7 +20,6 @@
         "./components/LoginForm/LoginForm.ts",
         "./components/Navigation/Navigation.ts",
         "./const.ts",
-        "./states.ts",
         "./stores/LoginStore/LoginStore.ts",
         "./stores/MyRouter/MyRouter.ts"
     ]

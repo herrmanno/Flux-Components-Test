@@ -26,7 +26,7 @@ class MyRouter extends Router {
 			name: 'login',
 			url: 'login',
 			view: [
-				{name: 'view1', html: 'html/login.html'}
+				{name: 'view1', component: 'LoginForm'}
 			]
 		},
 		{
